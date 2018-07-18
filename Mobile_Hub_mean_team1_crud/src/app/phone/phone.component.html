@@ -1,0 +1,33 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/phone-create']"><mat-icon>add</mat-icon></a>
+</div>
+<div class="box2">
+<div class="example-container mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Phone Id Column -->
+    <ng-container matColumnDef="phoneId">
+      <th mat-header-cell *matHeaderCellDef> Phone ID </th>
+      <td mat-cell *matCellDef="let element" class="phoneId-col"> {{element.phoneId}} </td>
+    </ng-container>
+
+    <!-- Phone Name Column -->
+    <ng-container matColumnDef="phoneName">
+      <th mat-header-cell *matHeaderCellDef> Phone Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.phoneName}} </td>
+    </ng-container>
+
+    <!-- OS Column -->
+    <ng-container matColumnDef="OS">
+      <th mat-header-cell *matHeaderCellDef> Operating System </th>
+      <td mat-cell *matCellDef="let element"> {{element.OS}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/phone-details/', row._id]"></tr>
+  </table>
+</div>
+</div>

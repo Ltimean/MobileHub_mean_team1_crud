@@ -1,0 +1,52 @@
+<div class="button-row">
+  <a mat-raised-button color="primary"[routerLink]="['/phones']"><mat-icon>list</mat-icon></a>
+</div>
+<div class="class1">
+<form [formGroup]="phoneForm" (ngSubmit)="onFormSubmit(phoneForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Phone ID" formControlName="phoneId"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!phoneForm.get('phoneId').valid && phoneForm.get('phoneId').touched">Please enter Phone ID</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="phoneName" formControlName="phoneName"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!phoneForm.get('phoneName').valid && phoneForm.get('phoneName').touched">Please enter phone </span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="OS" formControlName="OS"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!phoneForm.get('OS').valid && phoneForm.get('OS').touched">Please enter phone Author</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description" formControlName="description"
+           [errorStateMatcher]="matcher"></textarea>
+    <mat-error>
+      <span *ngIf="!phoneForm.get('description').valid && phoneForm.get('description').touched">Please enter phone Description</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="storage" formControlName="storage"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!phoneForm.get('storage').valid && phoneForm.get('storage').touched">Please enter storage</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="camera" formControlName="camera"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!phoneForm.get('camera').valid && phoneForm.get('camera').touched">Please enter camera</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!phoneForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,29 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width:650px;
+  overflow: auto;
+
+}
+
+.phoneId-col {
+  flex: 0 0 100px !important;
+  white-space: unset !important;
+  color: black;
+}
+
+.button-row {
+  margin: 10px 0;
+  text-align: center;
+  width: 450px;
+  margin-left: 350px;
+}
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: darkgray;
+  margin-right: 450px;
+}
+.box2
+{
+  width: 300px;
+  margin-left: 350px;
+}

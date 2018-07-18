@@ -1,0 +1,27 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/phones']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{phone.phoneName}}</h2></mat-card-title>
+    <mat-card-subtitle>{{phone.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>phoneId:</dt>
+      <dd>{{phone.phoneId}}</dd>
+      <dt>OS:</dt>
+      <dd>{{phone.OS}}</dd>
+      <dt>storage:</dt>
+      <dd>{{phone.storage}}</dd>
+      <dt>camera:</dt>
+      <dd>{{phone.camera}}</dd>
+      <dt>Update Date:</dt>
+      <dd>{{phone.updated_date | date}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/phone-edit', phone._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deletePhone(phone._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>
